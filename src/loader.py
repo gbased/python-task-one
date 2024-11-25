@@ -25,22 +25,20 @@ class DataLoader:
             logging.info('Loading of rooms completed')
 
     def load_students(self, students_file):
-        logging.info(f'Loading students from {rooms_file}')
+        logging.info(f'Loading students from {students_file}')
 
         with open(students_file, 'r') as file:
             students = json.load(file)
 
             for student in students: 
                 try:
-                    self.cursor.execute(
-                    f"""INSERT INTO rooms (id, name) VALUES
-                    (
+                    self.cursor.execute(f"""
+                    INSERT INTO students (id, birthday, room, name, sex) VALUES (
                         {student["id"]},
-                        {student["birthday"]}, 
-                        {student["room"]}, 
-                        {student["name"]}, 
-                        {student["sex"]});"
-                )
+                        {student["birthday"]},
+                        {student["room"]},
+                        {student["name"]},
+                        {student["sex"]})""")
                 except Exception as e:
                     logging.error(f'Error when inserting student: {e}')
             self.conn.commit()
