@@ -12,7 +12,7 @@ def main():
     parser = argparse.ArgumentParser(description='Process dormitory data')
     parser.add_argument('--students', required=True, help='Students file path (JSON format)')
     parser.add_argument('--rooms', required=True, help='Rooms file path (JSON format)')
-    parser.add_argument('--output', choices=['json', 'xml'], required=True, help='Output format (JSON or XML)')
+    parser.add_argument('--format', choices=['json', 'xml'], required=True, help='Output format (JSON or XML)')
     
     arg = parser.parse_args()
     
