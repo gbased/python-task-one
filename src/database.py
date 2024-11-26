@@ -18,5 +18,6 @@ def get_connection():
         logging.info(f'Error connecting to database: {e}')
         raise
 
+
     
     
