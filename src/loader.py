@@ -8,7 +8,7 @@ from datetime import datetime
 class DataLoader:
     def __init__(self):
         self.conn = get_connection()
-        self.conn.autocommit = True  # Включаем автокоммит
+        self.conn.autocommit = True 
 
     def load_rooms(self, rooms_file):
         logging.info(f'Loading rooms from {rooms_file}')
