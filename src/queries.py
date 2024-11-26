@@ -113,4 +113,4 @@ class DatabaseQueries:
     def close_connection(self): 
         if self.conn:
             self.conn.close()
-            logging.info('Соединение с базой данных закрыто')
+            logging.info('Connection to the database closed')
