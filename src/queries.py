@@ -27,7 +27,6 @@ class DatabaseQueries:
                 return results
         except Exception as e:
             logging.error(f'Error when executing get_rooms_student_counts request: {e}')
-            # В режиме автокоммита откат транзакции не требуется
             return []
 
     def get_rooms_with_smallest_avg_age(self):
@@ -76,7 +75,7 @@ class DatabaseQueries:
             return []
 
     def get_rooms_with_both_sex_students(self):
-        logging.info('Выполнение запроса: Список комнат, где живут разнополые студенты')
+        logging.info('Fulfilling the query: rooms with at least two students of each sex')
         query = """
             SELECT
                 r.id,
